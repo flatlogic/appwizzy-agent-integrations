@@ -8,6 +8,10 @@ Connect Cursor to [AppWizzy](https://appwizzy.com) to inspect your projects, com
 
 This package contains a Cursor plugin manifest, remote MCP configuration, and an agent skill. It connects to the hosted AppWizzy service at `https://appwizzy.com/mcp/projects`; it does not run a local server.
 
+## OpenAI package draft
+
+The separate [openai/ package](openai/README.md) uses the portable Agent Plugins format for OpenAI. It is a prepared draft, not an uploaded, submitted, or published OpenAI listing. Package only that directory for OpenAI; the root configuration remains the native Cursor package described below.
+
 ## Requirements
 
 - An AppWizzy account and a Cursor version with plugin support.
