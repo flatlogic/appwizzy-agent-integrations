@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "appwizzy-projects": {
+      "url": "https://appwizzy.com/mcp/projects",
+      "auth": {
+        "CLIENT_ID": "appwizzy-cursor",
+        "scopes": ["projects:read", "projects:create"]
+      }
+    }
+  }
+}
