@@ -3,11 +3,18 @@
   "version": "0.2.0",
   "description": "Create and monitor AppWizzy app environments from GitHub or ZIP with AI agents.",
   "author": {
-    "name": "Flatlogic"
+    "name": "AppWizzy",
+    "email": "id@appwizzy.com"
   },
   "homepage": "https://appwizzy.com/documentation/appwizzy-mcp",
   "repository": "https://github.com/flatlogic/appwizzy-agent-integrations",
   "license": "MIT",
-  "keywords": ["appwizzy", "mcp", "hosting", "github", "development"],
+  "keywords": [
+    "appwizzy",
+    "mcp",
+    "hosting",
+    "github",
+    "development"
+  ],
   "logo": "assets/logo.svg"
 }

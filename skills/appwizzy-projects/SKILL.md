@@ -9,9 +9,10 @@ Use the connected AppWizzy MCP tools. Read their current schemas and server inst
 
 ## Inspect
 
-- Use `list_projects` to find projects belonging to the user. Continue with `offset=next_offset` while `has_more=true`.
+- Use `list_projects` to find projects belonging to the user. Continue with `offset=next_offset` while `has_more=true`. Count unique returned project IDs across pages and repeated calls. State whether the summary covers all pages or only the pages retrieved; do not present a partial count as the account total.
 - Use `list_project_machines` for available machines and current daily tariffs. Do not invent machine slugs, prices, project IDs, or links.
 - Use `get_project_status` for status checks. These tools require `projects:read`; explain a missing scope instead of assuming access.
+- Do not infer that a VM is currently running or charges are accruing from a provisioning status. Similar project names or statuses do not establish duplicates and do not justify a deletion recommendation. Obtain separate evidence for these claims.
 
 ## Prepare creation
 
@@ -22,6 +23,8 @@ Use the connected AppWizzy MCP tools. Read their current schemas and server inst
 ## Disclose costs and obtain consent
 
 Before `create_project`, show the effective machine, GitHub/ZIP source or requested empty project, visibility, `estimated_credit_cost` reserved for the first 24 hours, and the ongoing credits-per-day hosting tariff. The estimate is a daily hosting price, not a monthly estimate or final total.
+
+If a monthly hosting extrapolation is useful, explicitly state the number of days and assumptions of continuous usage and an unchanged daily tariff. Label it as a hosting-only estimate, excluding AI, rather than an actual bill or evidence of current charges.
 
 Explain that creation automatically starts AI preparation or launch, including empty projects and GitHub/ZIP imports. The hosting quote excludes AI. AI is charged separately in AppWizzy credits based on actual usage, and its final cost is unknown in advance.
 

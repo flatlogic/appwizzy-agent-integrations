@@ -1,6 +1,6 @@
 # AppWizzy Projects for Cursor
 
-**Preview:** the Cursor OAuth backend update is awaiting production deployment. The Marketplace application has not been submitted.
+**Preview, 2026-10-02:** the Cursor OAuth backend is deployed. Desktop OAuth, discovery of all six tools, and read-only project and machine calls are verified. The creation quote and explicit refusal checks passed without creating a project. The Marketplace application has not been submitted.
 
 ![AppWizzy](assets/logo.svg)
 
@@ -49,6 +49,8 @@ The OAuth client ID in `mcp.json` is public. You do not need to copy an access t
 
 Creating a project can incur charges. Before creation, the agent must show the selected machine, source or requested empty project, visibility, hosting credits reserved for the first 24 hours, and the ongoing daily hosting tariff. The quote's `estimated_credit_cost` is the daily hosting price, not a monthly estimate or final total.
 
+Any monthly hosting extrapolation must state the assumed number of days, continuous usage, and unchanged daily tariff. It excludes AI usage and is not evidence of the account's actual bill or current charges.
+
 Creation also automatically starts AI preparation or launch, including GitHub imports, ZIP imports, and empty projects. AI usage is charged separately in AppWizzy credits. The hosting quote excludes this usage, and the final AI cost is not known in advance. The agent must obtain explicit consent to both hosting and additional AI charges before calling `create_project`.
 
 Refusing creation must leave the project uncreated. A quote, OAuth authorization, or successful ZIP upload is not consent to paid creation. Changed parameters, changed prices, or an expired quote require a new allowed quote and fresh consent. Retrying the same creation intent after a timeout must reuse the same idempotency key.
@@ -57,7 +59,9 @@ Refusing creation must leave the project uncreated. A quote, OAuth authorization
 
 Use `owner/repository` for GitHub imports. For ZIP imports, upload to the one-time URL returned by `prepare_project_archive_upload`, then use its `archive_upload_id`. Choose one source; GitHub and ZIP cannot be combined. Only create an empty project when the user explicitly requests one.
 
-Report returned project links and provisioning status accurately. A `ready` provisioning status alone does not establish that the application's endpoints are healthy or that its AI preparation has finished.
+Count unique returned project IDs, including across repeated pages, and state whether a summary covers all pages or only the pages retrieved. Similar names do not establish duplicate projects or justify a deletion recommendation.
+
+Report returned project links and provisioning status accurately. A `ready` provisioning status alone does not establish that a VM is currently running, charges are accruing, the application's endpoints are healthy, or AI preparation has finished. Verify these separately before making such claims.
 
 ## Troubleshooting
 
