@@ -1,6 +1,6 @@
 # AppWizzy Projects for Cursor
 
-**Preview, 2026-10-02:** the Cursor OAuth backend is deployed. Desktop OAuth, discovery of all six tools, and read-only project and machine calls are verified. The creation quote and explicit refusal checks passed without creating a project. The Marketplace application has not been submitted.
+**Preview, 2026-10-02:** the Cursor OAuth backend is deployed. Desktop OAuth, discovery of all six tools, and read-only project and machine calls are verified. The creation quote and explicit refusal checks passed without creating a project. The Marketplace application has been submitted and is awaiting review. A public Marketplace listing is not yet verified; use the source installation instructions below.
 
 ![AppWizzy](assets/logo.svg)
 
